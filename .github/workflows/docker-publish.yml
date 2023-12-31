@@ -70,5 +70,5 @@ jobs:
               docker buildx build --platform linux/arm64 \
                       -t birdxs/techxuexi-arm64v8:${GITHUB_REF##*/}${{ github.run_number }} \
                       --push \
-                      -f ./Dockerfile_arm64v8 .
+                      -f ./Dockerfile_arm64v8.dev .
  
