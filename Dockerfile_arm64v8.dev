@@ -8,7 +8,7 @@ RUN apk add --update --no-cache curl && curl -L ${QEMU_URL} | tar zxvf - -C . --
 FROM arm64v8/python:3.7-slim
 
 COPY --from=builder qemu-aarch64-static /usr/bin
-ARG usesource="https://hub.fastgit.xyz/TechXueXi/TechXueXi.git"
+ARG usesource="https://github.com/TechXueXi/TechXueXi.git"
 ARG usebranche="dev"
 ENV pullbranche=${usebranche}
 ENV Sourcepath=${usesource}
@@ -31,8 +31,8 @@ ENV Secret=
 ENV Nohead=True
 ENV Pushmode=1
 ENV islooplogin=False
-#ENV Sourcepath="https://hub.fastgit.xyz/TechXueXi/TechXueXi.git"
-ENV CRONTIME="30 9 * * *"
+#ENV Sourcepath="https://github.com/TechXueXi/TechXueXi.git"
+ENV CRONTIME="30 8 * * *"
 # RUN rm -f /xuexi/config/*; ls -la
 COPY requirements.txt /xuexi/requirements.txt
 COPY run.sh /xuexi/run.sh 
